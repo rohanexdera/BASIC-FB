@@ -12,7 +12,7 @@ import userRouter from "./routes/userRouter.js";
 app.use(cors({
     origin: "http://localhost:5173",
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: false
+    credentials: true,
 }));
 
 app.use(express.json());
