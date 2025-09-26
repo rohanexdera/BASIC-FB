@@ -24,7 +24,7 @@ const Login = () => {
       const data = await res.json();
       if (res.ok) {
         setMessage(data.message);
-        navigate("/profile"); // redirect to profile page
+        navigate("/profile");
       } else {
         setMessage(data.message);
       }

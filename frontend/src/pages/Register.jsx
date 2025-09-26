@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [formData, setFormData] = useState({ name: "", email: "", password: "" });
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,6 +25,7 @@ const Register = () => {
       if (res.ok) {
         setMessage(data.message);
         setFormData({ name: "", email: "", password: "" });
+        navigate("/profile");
       } else {
         setMessage(data.message);
       }

@@ -11,11 +11,11 @@ const Profile = () => {
         const res = await fetch("http://localhost:3000/api/user/profile", {
           credentials: "include",
         });
+        console.log(res);
         const data = await res.json();
         if (res.ok) {
           setUser(data.user);
         } else {
-          navigate("/login"); // redirect to login if not authenticated
         }
       } catch (err) {
         console.error(err);
