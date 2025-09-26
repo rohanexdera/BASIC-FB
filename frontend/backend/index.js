@@ -7,9 +7,7 @@ dotenv.config();
 import cookieParser from "cookie-parser";
 app.use(cookieParser());
 import userRouter from "./routes/userRouter.js";
-import subscriptionRouter from "./routes/subscriptionRoutes.js";
 
-// lllllll
 
 app.use(cors({
     origin: "http://localhost:5173",
@@ -34,8 +32,7 @@ async function connectDB() {
 connectDB();
 
 
-app.use("/api/user", userRouter);
-app.use("/api/subscription", subscriptionRouter);
+app.use("/api/user", userRouter)
 
 
 app.listen(process.env.PORT, () => {
